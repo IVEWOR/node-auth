@@ -1,16 +1,23 @@
-const app = require("express");
-const mongoose = require("mongoose");
+const express = require("express");
+const app = express();
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-
-const db = mongoose.connection;
-
-db.on("error", console.bind(console, "MongoDB connected error: "));
-db.once("open", () => {
-    console.log("connected to mongodb");
+app.get("/", (req, res) => {
+    res.send("Hello");
 });
 
-module.exports = db;
+app.get("/users/:id", (req, res) => {
+    const userId = req.params.id;
+    res.send(`user profile id: ${userId}`);
+});
+
+app.post("/submit", (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    res.send(`form submitted successfully, name: ${name}, email: ${email}`);
+});
+
+const port = process.env.PORT || 5050;
+
+app.listen(port, () => {
+    console.log(`Server running at port: ${port}`);
+});
