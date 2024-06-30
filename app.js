@@ -29,9 +29,17 @@ app
     return res.json(user);
   })
   .patch((req, res) => {
+    const id = Number(req.params.id);
+    const userIndex = users.findIndex((user) => user.id === id);
     const body = req.body;
-    const id = req.params.id;
-    return res.json({ status: id });
+    const user = users[userIndex];
+
+    const updatedUser = { ...user, ...body };
+    users[userIndex] = updatedUser;
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+      console.log(userIndex);
+      return res.json({ status: userIndex });
+    });
   })
   .delete((req, res) => {
     // delete user with id
