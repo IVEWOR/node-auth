@@ -29,8 +29,9 @@ app
     return res.json(user);
   })
   .patch((req, res) => {
-    // edit user with id
-    return res.json({ status: "pending" });
+    const body = req.body;
+    const id = req.params.id;
+    return res.json({ status: id });
   })
   .delete((req, res) => {
     // delete user with id
