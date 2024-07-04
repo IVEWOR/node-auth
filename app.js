@@ -43,7 +43,15 @@ app
   })
   .delete((req, res) => {
     // delete user with id
-    return res.json({ status: "pending" });
+    const id = Number(req.params.id);
+    const userIndex = users.findIndex((user) => user.id === id);
+    const user = users[userIndex];
+
+    users.splice(userIndex);
+
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+      return res.json({ status: users[userIndex] });
+    });
   });
 
 app.post("/api/users", (req, res) => {
