@@ -1,0 +1,20 @@
+
+ 1720132547771 | ::1 | GET | /api/users
+ 1720132560295 | ::1 | GET | /api/users
+ 1720132601298 | ::1 | GET | /api/users
+ 1720132604824 | ::1 | GET | /api/users
+ 1720132607891 | ::1 | GET | /api/users
+ 1720132608864 | ::1 | GET | /api/users
+ 1720132610012 | ::1 | GET | /api/users
+ 1720137529155 | ::1 | POST | /api/users/
+ 1720137542638 | ::1 | POST | /api/users/
+ 1720137623312 | ::1 | POST | /api/users/
+ 1720137818199 | ::1 | GET | /users
+ 1720137818593 | ::1 | GET | /favicon.ico
+ 1720137869147 | ::1 | GET | /api/users
+ 1720137979247 | ::1 | GET | /api/users/668737460a2da458d118279a
+ 1720138123975 | ::1 | PATCH | /api/users/668737460a2da458d118279a
+ 1720138238716 | ::1 | PATCH | /api/users/668737460a2da458d118279a
+ 1720138272750 | ::1 | PATCH | /api/users/668737460a2da458d118279a
+ 1720138296220 | ::1 | PATCH | /api/users/668737460a2da458d118279a
+ 1720138361984 | ::1 | DELETE | /api/users/668737972eb3350ea5cea797
